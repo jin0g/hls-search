@@ -13,7 +13,7 @@ The kernel function in main.cc is synthesized by Vitis HLS and implemented by Vi
 
 ### Synthesys and Implementation (example)
 ```
-$ make impl HLS_PERIOD=10 VIVADO_PERIOD=5 SYNTH_STRATEGY=Flow_AreaOptimized_high IMPL_STRATEGY=Performance_NetDelay_low
+$ make impl HLS_PERIOD=2.0 VIVADO_PERIOD=2.0 SYNTH_STRATEGY=Flow_AreaOptimized_high IMPL_STRATEGY=Performance_NetDelay_low
 ```
 - HLS_PERIOD: float, Target clock period of HLS synthesis
 - VIVADO_PERIOD: float, Target clock period of implementation
