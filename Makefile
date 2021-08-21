@@ -1,10 +1,12 @@
 # PARAMETERS
 TARGET = ZCU102
-PHLS = 2.0
-PIMPL = 1.4
+HLS_PERIOD = 5.0
+VIVADO_PERIOD = 5.0
+SYNTH_STRATEGY = default
+IMPL_STRATEGY = default
 
 # DIRECTORIES
-DIR = ${TARGET}-${PHLS}-${PIMPL}
+DIR = ${TARGET}-${HLS_PERIOD}-${VIVADO_PERIOD}-${SYNTH_STRATEGY}-${IMPL_STRATEGY}
 VIVADO_HLS = /tools/Xilinx/Vitis_HLS/2021.1/bin/vitis_hls
 
 # Device Part
@@ -12,15 +14,15 @@ ZCU102_PART  = "xczu9eg-ffvb1156-2-e"
 PART = ${${TARGET}_PART}
 
 
-all: build/${DIR}/vitis_hls.log
+impl: build/${DIR}/vitis_hls.log
+
+log:
+	find -name vitis_hls.log | xargs grep "CP achieved post-implementation"
 
 clean:
 	rm -r build/
 
-watch:
-	find -name vitis_hls.log | xargs grep "CP achieved post-implementation"
-
 build/${DIR}/vitis_hls.log: main.cc
 	mkdir -p build/${DIR}/
-	cd build/${DIR}/ && PART=${PART} PHLS=${PHLS} PIMPL=${PIMPL} ${VIVADO_HLS} -f ../../script.tcl
+	cd build/${DIR}/ && PART=${PART} HLS_PERIOD=${HLS_PERIOD} VIVADO_PERIOD=${VIVADO_PERIOD} SYNTH_STRATEGY=${SYNTH_STRATEGY} IMPL_STRATEGY=${IMPL_STRATEGY} ${VIVADO_HLS} -f ../../script.tcl
 
