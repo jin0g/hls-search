@@ -1,5 +1,6 @@
 # vivado-vitis-hls-search
-Explore frequencies and strategies in Vitis HLS and Vivado
+
+Explore frequencies and strategies in Vitis HLS and Vivado from only C++ code.
 
 The kernel function in main.cc is synthesized by Vitis HLS and implemented by Vivado HLS.
 
