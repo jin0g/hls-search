@@ -3,6 +3,9 @@ Explore frequencies and strategies in Vitis HLS and Vivado
 
 The kernel function in main.cc is synthesized by Vitis HLS and implemented by Vivado HLS.
 
+## TODO
+- Is the strategy reflected??
+
 ## Environments
 
 - Ubuntu
