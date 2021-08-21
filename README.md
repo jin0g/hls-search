@@ -1,4 +1,4 @@
-# vivado-vitis-hls-search
+# vivado-vitis-hls-timing-strategy-search
 
 Explore frequencies and strategies in Vitis HLS and Vivado from only C++ code.
 
