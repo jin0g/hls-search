@@ -1,53 +1,52 @@
 # Timing Strategy Search for Vitis HLS
 
-The HLS Search toolset aids in generating and optimizing hardware descriptions using Vitis HLS.
-This tool primarily operates on a Makefile basis, simplifying the execution of Vitis HLS by altering various parameters and settings.
-It's designed to efficiently conduct FPGA hardware descriptions and optimizations.
-By setting the appropriate parameters and specifying the necessary test cases and target devices, Vitis HLS can be easily executed.
+HLS Searchは、Vitis HLSのハードウェア記述の最適化をサポートします。
+このツールは主にVitis HLSの実行をさまざまなパラメータや設定を変更し探索します。
+効率的にFPGAハードウェアの記述と最適化を行うことができるように設計されています。
 
-## Recommended Environments
+## 推奨環境
 
 - Ubuntu 22.04
-- Vivado 2023.1 and Vitis HLS 2023.1
-- Installed in `/tools/Xilinx/`
+- Vivado 2023.1 および Vitis HLS 2023.1
+- インストールパス: `/tools/Xilinx/`
 
-## Configuration Parameters
+## 設定パラメータ
 
-Through the following parameters, you can specify the behavior of HLS, the target device, test cases, and more:
+以下のパラメータを通じて、HLSの振る舞い、ターゲットデバイス、テストケースなどを指定できます：
 
-- `SOURCE`: C/C++ source file (Default: `main.cpp`)
-- `TARGET`: Target device (Default: `KV260`)
-- `TEST`: Test case to be executed (Default: `A`)
-- `HLS_PERIOD`: Clock cycle for HLS (Default: `5.0`)
-- `VIVADO_PERIOD`: Clock cycle for Vivado (Default: `5.0`)
-- `SYNTH_STRATEGY`: Synthesis strategy (Default: `default`)
-- `IMPL_STRATEGY`: Implementation strategy (Default: `default`)
+- `SOURCE`: C/C++ソースファイル (デフォルト: `main.cpp`)
+- `TARGET`: ターゲットデバイス (デフォルト: `KV260`)
+- `TEST`: 実行するテストケース (デフォルト: `A`)
+- `HLS_PERIOD`: HLSのクロックサイクル (デフォルト: `5.0`)
+- `VIVADO_PERIOD`: Vivadoのクロックサイクル (デフォルト: `5.0`)
+- `SYNTH_STRATEGY`: Synthesys Strategy (デフォルト: `default`)
+- `IMPL_STRATEGY`: Impliment Strategy (デフォルト: `default`)
 
-## Makefile Commands
+## Makefileのコマンド
 
-- `all`: Executes Vitis HLS using the specified parameters.
-- `results`: Searches for the log file of the all execution and displays.
-- `clean`: Deletes the `build/` directory, clearing outputs and logs.
+- `all`: 指定されたパラメータを使用してVitis HLSを実行します。
+- `results`: `all`の実行ログファイルを検索して表示します。
+- `clean`: `build/`ディレクトリを削除して、出力とログをクリアします。
 
-## Usage
+## 使い方
 
-### Specifying Operating Frequency
+### 動作周波数の指定
 ```
 $ make HLS_PERIOD=3.0 VIVADO_PERIOD=2.5
 ```
 
-### Running A/B Tests
+### A/Bテストの実行
 ```
 $ make TEST=A
 $ make TEST=B
 ```
 
-### Modifying Strategies
+### 戦略の変更
 ```
 $ make SYNTH_STRATEGY=Flow_AreaOptimized_high IMPL_STRATEGY=Performance_NetDelay_low
 ```
 
-### Show Results
+### 結果の表示
 ```
 $ make results
 >                          Directory,    CP, LUT,  FF, BRAM, URAM, CLB
