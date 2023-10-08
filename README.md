@@ -1,20 +1,20 @@
-# vivado-vitis-hls-timing-strategy-search
+# Timing Strategy Search for Vitis HLS
 
 Explore frequencies and strategies in Vitis HLS and Vivado from only C++ code.
 
 The kernel function in main.cc is synthesized by Vitis HLS and implemented by Vivado HLS.
 
-## Environments
+## Recommended Environments
 
-- Ubuntu
-- Vivado 2021.1 and Vitis HLS 2021.1
-- Installed in `/tools/Xilinx`
+- Ubuntu 22.04
+- Vivado 2023.1 and Vitis HLS 2023.1
+- Installed in `/tools/Xilinx/`
 
 ## Usage
 
 ### Synthesys and Implementation (example)
 ```
-$ make impl HLS_PERIOD=2.0 VIVADO_PERIOD=2.0 SYNTH_STRATEGY=Flow_AreaOptimized_high IMPL_STRATEGY=Performance_NetDelay_low
+$ make HLS_PERIOD=2.0 VIVADO_PERIOD=2.0 SYNTH_STRATEGY=Flow_AreaOptimized_high IMPL_STRATEGY=Performance_NetDelay_low
 ```
 - HLS_PERIOD: float, Target clock period of HLS synthesis
 - VIVADO_PERIOD: float, Target clock period of Vivado implementation
