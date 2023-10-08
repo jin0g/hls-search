@@ -17,7 +17,7 @@ Through the following parameters, you can specify the behavior of HLS, the targe
 
 - `SOURCE`: C/C++ source file (Default: `main.cpp`)
 - `TARGET`: Target device (Default: `KV260`)
-- `TEST`: Test case to be executed (Default: `NONE`)
+- `TEST`: Test case to be executed (Default: `A`)
 - `HLS_PERIOD`: Clock cycle for HLS (Default: `5.0`)
 - `VIVADO_PERIOD`: Clock cycle for Vivado (Default: `5.0`)
 - `SYNTH_STRATEGY`: Synthesis strategy (Default: `default`)

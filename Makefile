@@ -1,7 +1,7 @@
 # PARAMETERS
 export SOURCE ?= main.cc
 export TARGET ?= KV260
-export TEST ?= NONE
+export TEST ?= A
 export HLS_PERIOD ?= 5.0
 export VIVADO_PERIOD ?= 5.0
 export SYNTH_STRATEGY ?= default
