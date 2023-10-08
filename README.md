@@ -1,7 +1,5 @@
 # Timing Strategy Search for Vitis HLS
 
-# Vitis HLSのタイミング戦略検索
-
 HLS Searchは、Vitis HLSのハードウェア記述の最適化をサポートします。
 このツールは主にVitis HLSの実行をさまざまなパラメータや設定を変更し探索します。
 効率的にFPGAハードウェアの記述と最適化を行うことができるように設計されています。
