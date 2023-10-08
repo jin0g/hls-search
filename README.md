@@ -1,5 +1,5 @@
 # Timing Strategy Search for Vitis HLS
-```
+
 # Vitis HLSのタイミング戦略検索
 
 HLS Searchは、Vitis HLSのハードウェア記述の最適化をサポートします。
