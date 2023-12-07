@@ -1,6 +1,6 @@
 open_project test
 set_top kernel
-add_files ../../main.cc -cflags "-D TEST_$env(TEST)"
+add_files ../../$env(SORUCE) -cflags "-D TEST_$env(TEST)"
 open_solution "solution1" -flow_target vivado
 set_part $env(PART)
 create_clock -period $env(HLS_PERIOD) -name default
